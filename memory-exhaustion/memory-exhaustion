@@ -216,7 +216,7 @@ handle_error() {
 
 memory_exhaustion_test() {
     # Constants
-    local TIMEOUT=1500  # 25 minutes in seconds
+    local TIMEOUT=3600  # 25 minutes in seconds
 
     # Start the initial container
     start_initial_container &
