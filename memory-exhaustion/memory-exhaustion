@@ -113,7 +113,7 @@ start_initial_container() {
 
     exec_into_container "$MEMORY_EXHAUSTION_BASE_CONTAINER_NAME" "df -h"
 
-    exec_into_container "$MEMORY_EXHAUSTION_BASE_CONTAINER_NAME" "dnf install --installroot=/mnt/test_volume --releasever=\$(source /etc/os-release && echo \$VERSION_ID) -y stress-ng procps-ng"
+    exec_into_container "$MEMORY_EXHAUSTION_BASE_CONTAINER_NAME" "dnf install --installroot=/mnt/test_volume --use-host-config --releasever=\$(source /etc/os-release && echo \$VERSION_ID) -y stress-ng procps-ng"
 
     echo "====  DEBUG free ====================="
     free -hg
