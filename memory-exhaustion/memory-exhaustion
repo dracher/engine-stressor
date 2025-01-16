@@ -44,7 +44,7 @@ start_initial_container() {
     echo "export PATH=/mnt/test_volume/bin:\$PATH" >> /mnt/container_mem_test/root/.bashrc
     echo "export LD_LIBRARY_PATH=/mnt/test_volume/lib:/mnt/test_volume/lib64:\$LD_LIBRARY_PATH" >> /mnt/container_mem_test/root/.bashrc
 
-    curl -L -o /mnt/container_mem_test/usr/local/bin/exhaustion-memory-engine-stressor https://raw.githubusercontent.com/containers/engine-stressor/main/memory-exhaustion/exhaustion-memory-engine-stressor && chmod +x /mnt/container_mem_test/usr/local/bin/exhaustion-memory-engine-stressor
+    curl -L -o /mnt/container_mem_test/usr/local/bin/exhaustion-memory-engine-stressor https://raw.githubusercontent.com/dracher/engine-stressor/main/memory-exhaustion/exhaustion-memory-engine-stressor && chmod +x /mnt/container_mem_test/usr/local/bin/exhaustion-memory-engine-stressor
 
     # Ensure the disk image is unmounted on script exit
     trap 'umount /mnt/container_mem_test && rm -f /tmp/container_os.img' EXIT
