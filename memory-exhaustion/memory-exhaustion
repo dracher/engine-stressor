@@ -189,7 +189,7 @@ cleanup_nested_containers() {
 cleanup_initial_container() {
     echo "INFO: Cleaning up container $MEMORY_EXHAUSTION_BASE_CONTAINER_NAME"
 
-    STOP_CONTAINER_CMD="podman stop \"$MEMORY_EXHAUSTION_BASE_CONTAINER_NAME\""
+    STOP_CONTAINER_CMD="podman stop -t 60 \"$MEMORY_EXHAUSTION_BASE_CONTAINER_NAME\""
     REMOVE_CONTAINER_CMD="podman rm \"$MEMORY_EXHAUSTION_BASE_CONTAINER_NAME\" --force"
 
     if eval "$STOP_CONTAINER_CMD"; then
